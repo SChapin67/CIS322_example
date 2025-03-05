@@ -2,6 +2,8 @@ package ExplorationGame;
 
 import javax.swing.JPanel;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class ExplorationGame extends JPanel {
     // Game Constants
@@ -20,8 +22,17 @@ public class ExplorationGame extends JPanel {
     private boolean movePressed = false;
     private Direction moveDirection;
 
+    private ArrayList<Actor> enemies;
+    private ArrayList<HPItem> Items;
+    private Random random = new Random();
+    private ArrayList<Actor> playerUnits;
+    private Actor activeUnit;
+
+
     public ExplorationGame()
     {
+        setPreferredSize(new Dimension(VIEW_WIDTH,VIEW_HEIGHT));
+        setFocusable(true);
     }
 
 

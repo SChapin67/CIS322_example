@@ -1,6 +1,5 @@
 package ExplorationGame;
 
-import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -29,6 +28,26 @@ public class Knight extends Actor {
 
     @Override
     public void attack(ArrayList<Actor> enemies) {
+        attacking = true;
+        int damage = 25;
 
+        Rectangle attackarea = getAttackArea();
+
+        for (Actor enemy : enemies)
+        {
+            if (((Enemy)enemy).visible && isEnemyHit(enemy, attackarea))
+            {
+              enemy.changeHP(damage);
+              if (enemy.hp <= 0)
+              {
+                  enemies.remove(enemy);
+                  break;
+              }
+            }
+        }
+    }
+
+    private boolean isEnemyHit(Actor enemy, Rectangle attackArea) {
+        return true;
     }
 }
