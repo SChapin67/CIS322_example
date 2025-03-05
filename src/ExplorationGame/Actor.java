@@ -6,9 +6,9 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public abstract class Actor {
-    protected int x,y,hp,maxHP,speed;
-    private Color color;
-    protected Direction lastDirection;
+    public int x,y,hp,maxHP,speed;
+    public Color color;
+    public Direction lastDirection;
 
     public Actor(int x, int y, int maxHP, int speed, Color color)
     {
